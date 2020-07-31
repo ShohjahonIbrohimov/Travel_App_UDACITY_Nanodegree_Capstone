@@ -16,11 +16,11 @@ const cors = require('cors');
 app.use(cors());
 
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static('dist'))
 
 // Create a local server
 
-const port = 9000;
+const port = 7000;
 
 const server = app.listen(port, listening);
 
@@ -32,7 +32,7 @@ function listening() {
 console.log(__dirname);
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile('dist/index.html');
 })
 
 // POST request
@@ -40,3 +40,10 @@ app.post('/', function (req, res) {
     appData[0] = req.body;
     console.log(appData);
 })
+
+const data = '{"name":"Shohjahon"}';
+
+app.get('/', function (req, res) {
+    console.log('Get request received!');
+    res.send(data);
+}) 

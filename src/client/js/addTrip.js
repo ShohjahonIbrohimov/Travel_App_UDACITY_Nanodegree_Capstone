@@ -1,36 +1,50 @@
-const tripTo = document.getElementById('trip_to');
-const departing = document.getElementById('departing');
+// const tripTo = document.getElementById('trip_to');
+// const departing = document.getElementById('departing');
 const submitBtn = document.getElementById('submit');
 
-submitBtn.addEventListener('click', () => {
-    const tripDetails = {
-        tripTo: tripTo.value,
-        departing: departing.value
-    }
+// submitBtn.addEventListener('click', () => {
+//     const tripDetails = {
+//         tripTo: tripTo.value,
+//         departing: departing.value
+//     }
 
 
-    postTripDetails('/', tripDetails);
-});
+//     postTripDetails('/', tripDetails);
+// });
 
-const postTripDetails = async function (url = '', data = {}) {
-    console.log(data);
+// const postTripDetails = async function (url = '', data = {}) {
+//     console.log(data);
 
-    const response = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    });
+//     const response = await fetch(url, {
+//         method: 'POST',
+//         credentials: 'same-origin',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(data),
+//     });
 
-    try {
-        const newData = await response.json();
-        console.log(newData);
-        return newData;
-    } catch (error) {
-        console.log(error);
-    }
+//     try {
+//         const newData = await response.json();
+//         console.log(newData);
+//         return newData;
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+const sayHello = () => {
+    console.log('Hello my subscribers!')
 }
 
+submitBtn.addEventListener('click', () => {
+    fetch('/')
+        .then(res => {
+            return res.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        })
+})
 
+export { sayHello };
