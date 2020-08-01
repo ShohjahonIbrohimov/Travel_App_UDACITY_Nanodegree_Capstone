@@ -43,7 +43,7 @@ app.post('/', function (req, res) {
 
 const data = '{"name":"Shohjahon"}';
 
-app.get('/', function (req, res) {
+app.get('/test', function (req, res) {
     console.log('Get request received!');
     res.send(data);
 }) 

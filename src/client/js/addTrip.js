@@ -38,7 +38,7 @@ const sayHello = () => {
 }
 
 submitBtn.addEventListener('click', () => {
-    fetch('/')
+    fetch('http://localhost:9000/test')
         .then(res => {
             return res.json();
         })
