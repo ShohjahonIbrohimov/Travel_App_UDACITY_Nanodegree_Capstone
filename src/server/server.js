@@ -1,5 +1,7 @@
+
+
 // Endpoint
-const appData = [];
+const trips = [];
 
 // Express
 var path = require('path');
@@ -29,21 +31,16 @@ function listening() {
     console.log(`running on localhost: ${port}`)
 }
 
-console.log(__dirname);
+
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
 })
 
 // POST request
-app.post('/', function (req, res) {
-    appData[0] = req.body;
-    console.log(appData);
+app.post('/test', function (req, res) {
+    console.log('post received!');
+    trips[0] = req.body;
+    res.send(trips[0]);
 })
 
-const data = '{"name":"Shohjahon"}';
-
-app.get('/test', function (req, res) {
-    console.log('Get request received!');
-    res.send(data);
-}) 

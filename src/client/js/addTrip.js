@@ -1,50 +1,10 @@
-// const tripTo = document.getElementById('trip_to');
-// const departing = document.getElementById('departing');
-const submitBtn = document.getElementById('submit');
+export function addTrip() {
+    const addBtn = document.querySelector('.add_btn');
+    const add_trip = document.querySelector('.add_trip');
 
-// submitBtn.addEventListener('click', () => {
-//     const tripDetails = {
-//         tripTo: tripTo.value,
-//         departing: departing.value
-//     }
+    // Show add trip section
+    addBtn.addEventListener('click', () => {
+        add_trip.classList.toggle('hideSection');
 
-
-//     postTripDetails('/', tripDetails);
-// });
-
-// const postTripDetails = async function (url = '', data = {}) {
-//     console.log(data);
-
-//     const response = await fetch(url, {
-//         method: 'POST',
-//         credentials: 'same-origin',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(data),
-//     });
-
-//     try {
-//         const newData = await response.json();
-//         console.log(newData);
-//         return newData;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-const sayHello = () => {
-    console.log('Hello my subscribers!')
+    });
 }
-
-submitBtn.addEventListener('click', () => {
-    fetch('http://localhost:9000/test')
-        .then(res => {
-            return res.json();
-        })
-        .then(function (data) {
-            console.log(data);
-        })
-})
-
-export { sayHello };

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
+
     <title>Document</title>
 </head>
 
@@ -34,121 +35,30 @@
                 </button>
             </div>
         </div>
-        <!-- My trips START -->
-        <section id="trips">
-            <div class="trip container">
-                <div class="trip_item1">
-                    <!-- Trip details -->
-                    <div class="primary_details">
-                        <h3 class="trip_to"><span class="description">My trip to:</span> Paris, France</h3>
-                        <h3><span class="description">Departing:</span> 02/12/2020</h3>
-                        <div class="flight_info">
-                            <h4><span class="description">flight info:</span></h4>
-                            <div class="flight_info_text">
-                                Ord 3.00pm
-                                Flight 22 Udacity Air
-                                Ord 3.00pm
-                                Flight 44 Udacity Air
-                            </div>
-                        </div>
-                    </div>
-                    <div class="secondary_details">
-                        <div class="flight_distance">
-                            <i class="fas fa-road"></i>
-                            <p>Paris, France is 220 days away</p>
-                        </div>
-                        <div class="destination_weather">
-                            <i class="fas fa-cloud-sun-rain"></i>
-                            <div class="typical_weather">
-                                <p>Typical weather for then is:</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p>High - 46, Low - 35</p>
-                            <p>Mostly cloudy throught the day</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="trip_item2">
-                    <div class="destination_image">
-                        <img src="../assets/images/Eiffel Tower_GettyImages-1005348968.jpg" alt="">
-                    </div>
-                    <div class="buttons">
-                        <button class="add_btn"><i class="fas fa-plus-circle"></i>add lodging info</button>
-                        <button class="add_btn"><i class="fas fa-plus-circle"></i>add packing list</button>
-                        <button class="add_btn"><i class="fas fa-plus-circle"></i>add notes</button>
-                        <button class="remove_btn"><i class="fas fa-minus-circle"></i>remove trip</button>
-                    </div>
-                </div>
-            </div>
-            <div class="lodging_packing_notes container">
-                <div class="lodging_info">
-                    <h5>Lodging Info</h5>
-                    <textarea name="lodging" id="" cols="30" rows="10"></textarea>
-                    <div class="editing_tools">
-                        <i class="far fa-edit"></i>
-                        <i class="far fa-save"></i>
-                    </div>
-                </div>
-                <div class="packing_list">
-                    <h5>Packing List</h5>
-                    <div class="packing_items">
-                        <div class="packing_item">
-                            <span class="packing_item_name">apple</span>
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <div class="packing_item">
-                            <span class="packing_item_name">Banana</span>
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <div class="packing_item">
-                            <span class="packing_item_name">chairs and tables</span>
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <div class="packing_item">
-                            <span class="packing_item_name">cat</span>
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <div class="packing_item">
-                            <span class="packing_item_name">children</span>
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                        <div class="packing_item">
-                            <span class="packing_item_name">roof</span>
-                            <i class="far fa-times-circle"></i>
-                        </div>
-                    </div>
-                    <div class="editing_tools">
-                        <i class="far fa-edit"></i>
-                        <i class="far fa-save"></i>
-
-                    </div>
-                </div>
-                <div class="notes">
-                    <h5>Notes</h5>
-                    <textarea name="notes" id="" cols="30" rows="10"></textarea>
-                    <div class="editing_tools">
-                        <i class="far fa-edit"></i>
-                        <i class="far fa-save"></i>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Addeing trip section -->
+        <!-- Adding trip section -->
         <section class="add_trip">
             <div class="container">
                 <form action="#">
                     <label for="trip_to">My trip to:
                         <input type="text" id="trip_to" placeholder="enter location" required>
+                        <div>
+                            <p class="errorCity">This field can't be empty !</p>
+                        </div>
+                        <span class="requiredStar">*</span>
                     </label>
                     <label for="departing">Departing:
                         <input type="date" id="departing" placeholder="mm/dd/yyyy" required>
+                        <div>
+                            <p class="errorDate">This field can't be empty !</p>
+                        </div>
+                        <span class="requiredStar">*</span>
                     </label>
                     <input type="submit" value="Submit" id="submit">
                 </form>
             </div>
+        </section>
+        <!-- My trips START -->
+        <section id="trips">
         </section>
     </main>
 
@@ -181,6 +91,15 @@
     </footer>
 
 
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </body>
 
 </html>
