@@ -85,6 +85,16 @@ header {
     background-color: rgba(0, 0, 0, 0.767);
     z-index: -1;
 
+    .header_bgimage {
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        position: absolute;
+        z-index: -2;
+    }
+
 }
 
 .app_logo {
@@ -640,9 +650,6 @@ footer {
                 }
             }
 
-            .primary_details {
-
-            }
         }
 
         .trip_item2 {
