@@ -27,20 +27,26 @@ const port = 7000;
 const server = app.listen(port, listening);
 
 function listening() {
-    console.log('server running');
-    console.log(`running on localhost: ${port}`)
+    // console.log('server running');
+    // console.log(`running on localhost: ${port}`)
 }
 
 
 
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html');
-})
+export function testExpress() {
+    app.get('/', function (req, res) {
+        res.sendFile('dist/index.html');
+    });
+
+    return 'Post received successfully!';
+}
+
+testExpress();
 
 // POST request
 app.post('/test', function (req, res) {
-    console.log('post received!');
     trips[0] = req.body;
     res.send(trips[0]);
-})
 
+    return 'Post received successfully!';
+});
