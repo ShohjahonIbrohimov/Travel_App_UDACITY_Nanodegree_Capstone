@@ -57,10 +57,6 @@ function generateTrip() {
                             </div>
                         </div>
                         <div class="secondary_details">
-                            <div class="flight_distance">
-                                <i class="fas fa-road"></i>
-                                <p>Paris, France is 220 days away</p>
-                            </div>
                             <div class="destination_weather">
                                 <i class="fas fa-cloud-sun-rain"></i>
                                 <div class="typical_weather">

@@ -33,7 +33,7 @@ function listening() {
 
 
 
-export function testExpress() {
+function testExpress() {
     app.get('/', function (req, res) {
         res.sendFile('dist/index.html');
     });
@@ -41,7 +41,6 @@ export function testExpress() {
     return 'Post received successfully!';
 }
 
-testExpress();
 
 // POST request
 app.post('/test', function (req, res) {
@@ -50,3 +49,5 @@ app.post('/test', function (req, res) {
 
     return 'Post received successfully!';
 });
+
+module.exports = testExpress(); 
