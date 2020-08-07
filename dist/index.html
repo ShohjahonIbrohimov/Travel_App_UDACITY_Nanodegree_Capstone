@@ -1,7 +1,79 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/><title>Document</title><link href="main.css" rel="stylesheet"></head><body><header><div class="app_logo"><img class="logo" src="../assets/images/pin.png" alt=""> <span class="app_name">Travel Planner</span></div><div class="intro_word"><h1>We make your travel even more easier</h1></div><div class="overlay"><img class="header_bgimage" src="../../../assets/images/Travel-wallpaper.jpg" alt=""></div><div class="overlay"></div></header><main><div class="container"><div class="my_trips_header"><h2>My trips</h2><button class="add_btn"><i class="fas fa-plus-circle"></i> add trip</button></div></div><section class="add_trip"><div class="container"><form action="#"><label for="trip_to">My trip to: <input id="trip_to" placeholder="enter location" required><div><p class="errorCity">This field can't be empty !</p></div><span class="requiredStar">*</span></label> <label for="departing">Departing: <input type="date" id="departing" placeholder="mm/dd/yyyy" required><div><p class="errorDate">This field can't be empty !</p></div><span class="requiredStar">*</span></label> <input type="submit" value="Submit" id="submit"></form></div></section><section id="trips"></section></main><footer><div class="social_media"><h5>Find me on social media</h5><div class="social_media_icons"><div><i class="fab fa-facebook"></i><h6>Facebook</h6></div><div><i class="fab fa-twitter"></i><h6>Twitter</h6></div><div><i class="fab fa-github"></i><h6>Github</h6></div><div><i class="fab fa-telegram"></i><h6>Telegram</h6></div></div></div><div class="copyright"><p>Copyright&copy; Shohjahon_Ibrohimov All rights reserved</p></div></footer><script>// Check that service workers are supported
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="app_logo"><img class="logo" src="../assets/images/pin.png" alt=""> <span class="app_name">Travel
+                Planner</span></div>
+        <div class="intro_word">
+            <h1>We make your travel even more easier</h1>
+        </div>
+        <div class="overlay"><img class="header_bgimage" src="../assets/images/Travel-wallpaper.jpg" alt=""></div>
+        <div class="overlay"></div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="my_trips_header">
+                <h2>My trips</h2><button class="add_btn"><i class="fas fa-plus-circle"></i> add trip</button>
+            </div>
+        </div>
+        <section class="add_trip">
+            <div class="container">
+                <form action="#"><label for="trip_to">My trip to: <input id="trip_to" placeholder="enter location"
+                            required>
+                        <div>
+                            <p class="errorCity">This field can't be empty !</p>
+                        </div><span class="requiredStar">*</span>
+                    </label> <label for="departing">Departing: <input type="date" id="departing"
+                            placeholder="mm/dd/yyyy" required>
+                        <div>
+                            <p class="errorDate">This field can't be empty !</p>
+                        </div><span class="requiredStar">*</span>
+                    </label> <input type="submit" value="Submit" id="submit"></form>
+            </div>
+        </section>
+        <section id="trips"></section>
+    </main>
+    <footer>
+        <div class="social_media">
+            <h5>Find me on social media</h5>
+            <div class="social_media_icons">
+                <div><i class="fab fa-facebook"></i>
+                    <h6>Facebook</h6>
+                </div>
+                <div><i class="fab fa-twitter"></i>
+                    <h6>Twitter</h6>
+                </div>
+                <div><i class="fab fa-github"></i>
+                    <h6>Github</h6>
+                </div>
+                <div><i class="fab fa-telegram"></i>
+                    <h6>Telegram</h6>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright&copy; Shohjahon_Ibrohimov All rights reserved</p>
+        </div>
+    </footer>
+    <script>// Check that service workers are supported
         if ('serviceWorker' in navigator) {
             // Use the window load event to keep the page load performant
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/service-worker.js');
             });
-        }</script><script src="main.js"></script></body></html>
+        }</script>
+    <script src="main.js"></script>
+</body>
+
+</html>
